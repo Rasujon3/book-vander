@@ -88,14 +88,14 @@ const showBooks = (books) => {
 };
 
 const createCard = (book) => {
-  console.log(book);
+  // console.log(book);
   const div = document.createElement("div");
   div.classList.add("card");
 
   let overview;
   // console.log(overview);
   if (book.overview.length > 100) {
-    console.log("beshi ase");
+    // console.log("beshi ase");
     overview = book.overview.slice(0, 100) + "...";
   } else {
     overview = book.overview;
@@ -150,7 +150,7 @@ const displayWishlist = () => {
   const wishlist = getWishlistItems();
   console.log(wishlist);
 
-  bookList.forEach((book) => {
+  wishlist.forEach((book) => {
     const div = createCard(book);
     document.getElementById("wishlist").appendChild(div);
   });
