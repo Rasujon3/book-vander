@@ -88,10 +88,18 @@ const showBooks = (books) => {
 };
 
 const createCard = (book) => {
+  console.log(book);
   const div = document.createElement("div");
   div.classList.add("card");
 
-  let overview = book.overview;
+  let overview;
+  // console.log(overview);
+  if (book.overview.length > 100) {
+    console.log("beshi ase");
+    overview = book.overview.slice(0, 100) + "...";
+  } else {
+    overview = book.overview;
+  }
 
   div.innerHTML = `
   <div class="image-container">
